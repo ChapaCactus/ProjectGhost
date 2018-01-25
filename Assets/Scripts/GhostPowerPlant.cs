@@ -8,6 +8,6 @@ namespace Ghost
 	public class GhostPowerPlant : MonoBehaviour
 	{
 		[SerializeField]
-		private List<GhostPowerPot> _pots;
+		private List<PowerPotController> _pots;
 	}
 }

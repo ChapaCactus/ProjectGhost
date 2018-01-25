@@ -8,7 +8,8 @@ using HedgehogTeam.EasyTouch;
 
 namespace Ghost
 {
-	public class GhostPowerPot : MonoBehaviour
+	[RequireComponent(typeof(PowerPotView))]
+	public class PowerPotController : MonoBehaviour
 	{
 		[SerializeField]
 		private Constants.PotType _potType;
@@ -18,7 +19,15 @@ namespace Ghost
 		private Coroutine _chargingCoroutine { get; set; } = null;
 
 		private PowerPotModel _model { get; set; }
+		private PowerPotView _view { get; set; }
 		private GhostController _ghost { get; set; }
+
+		private void Awake()
+		{
+			_view = GetComponent<PowerPotView>();
+
+			PrepareChargeBar();
+		}
 
 		private void Update()
 		{
@@ -33,12 +42,12 @@ namespace Ghost
 			}
 		}
 
-		public static void Create(PowerPotModel model, Action<GhostPowerPot> callback)
+		public static void Create(PowerPotModel model, Action<PowerPotController> callback)
 		{
 			var prefab = Resources.Load("") as GameObject;
 			var go = Instantiate(prefab, null);
 
-			var res = go.GetComponent<GhostPowerPot>();
+			var res = go.GetComponent<PowerPotController>();
 			res.Setup(model);
 
 			callback(res);
@@ -78,18 +87,15 @@ namespace Ghost
 			// End
 			_chargingCoroutine = null;
 		}
-	}
 
-	public class PowerPotModel
-	{
-		public string ID { get; set; } = "";
-		public float ChargeSpeed { get; set; } = 1.0f;
-
-		public PowerPotModel(string id, float chargeSpeed)
+		private void PrepareChargeBar()
 		{
-			ID = id;
-
-			ChargeSpeed = chargeSpeed;
+			ChargeBar.Create(this, chargeBar =>
+			{
+				_view.SetChargeBar(chargeBar);
+				var barPosition = Utilities.GetScreenPosition(_view.ChargeBarPosition.position);
+				_view.ChargeBar.transform.localPosition = barPosition;
+			});
 		}
 	}
 }
