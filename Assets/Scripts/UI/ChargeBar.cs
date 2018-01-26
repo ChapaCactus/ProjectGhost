@@ -7,8 +7,13 @@ using UnityEngine.UI;
 
 namespace Ghost
 {
+	[RequireComponent(typeof(Slider))]
 	public class ChargeBar : MonoBehaviour
 	{
+		[SerializeField]
+		private Slider _slider;
+		public Slider Slider => _slider;
+
 		public PowerPotController Owner { get; private set; }
 
 		public static readonly string PrefabPath = "Prefabs/UI/ChargeBar";
@@ -27,6 +32,20 @@ namespace Ghost
 		public void Setup(PowerPotController owner)
 		{
 			Owner = owner;
+
+			Reset();
+		}
+
+		public void SetVisible(bool visible)
+		{
+			gameObject.SetActive(visible);
+		}
+
+		public void Reset()
+		{
+			Slider.maxValue = 100;
+			Slider.minValue = 0;
+			Slider.value = 0;
 		}
 	}
 }

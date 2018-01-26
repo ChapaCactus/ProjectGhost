@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using HedgehogTeam.EasyTouch;
+using DG.Tweening;
 
 namespace Ghost
 {
 	[RequireComponent(typeof(PowerPotView))]
+	[RequireComponent(typeof(QuickTap))]
 	public class PowerPotController : MonoBehaviour
 	{
 		[SerializeField]
@@ -21,12 +23,16 @@ namespace Ghost
 		private PowerPotModel _model { get; set; }
 		private PowerPotView _view { get; set; }
 		private GhostController _ghost { get; set; }
+		private QuickTap _quickTap { get; set; }
 
 		private void Awake()
 		{
 			_view = GetComponent<PowerPotView>();
+			_quickTap = GetComponent<QuickTap>();
 
 			PrepareChargeBar();
+
+			_quickTap.onTap.AddListener(OnTouch);
 		}
 
 		private void Update()
@@ -35,7 +41,7 @@ namespace Ghost
 
 			if (_ghost == null) return;
 
-			if(!IsCharging)
+			if (!IsCharging)
 			{
 				var chargeSpeed = _model.ChargeSpeed;
 				_chargingCoroutine = StartCoroutine(ChargeTimer(chargeSpeed));
@@ -62,21 +68,41 @@ namespace Ghost
 		{
 			Debug.Log($"{gameObject.name} is touched.");
 
-			GhostController.Create(Constants.GhostID.Com, transform, ghost => {
-				SetGhost(ghost);
-			});
+			if (_ghost == null)
+			{
+				GhostController.Create(Constants.GhostID.Com, transform, ghost =>
+				{
+					SetGhost(ghost);
+				});
+			}
+			else
+			{
+				RemoveGhost();
+			}
 		}
 
 		public void SetGhost(GhostController ghost)
 		{
 			if (_ghost != null) RemoveGhost();
 
+			_view.ChargeBar.SetVisible(false);
 			_ghost = ghost;
+
+			SetChargeBarValue(_ghost.ChargePower);
 		}
 
 		public void RemoveGhost()
 		{
+			Destroy(_ghost.gameObject);
 			_ghost = null;
+			_view.ChargeBar.SetVisible(false);
+			_view.ChargeBar.Reset();
+		}
+
+		private void SetChargeBarValue(float value)
+		{
+			DOTween.To(v => _view.ChargeBar.Slider.value = v, _view.ChargeBar.Slider.value, value, 0.4f)
+				   .OnStart(() => _view.ChargeBar.SetVisible(true));
 		}
 
 		private IEnumerator ChargeTimer(float chargeSpeed)
@@ -93,6 +119,7 @@ namespace Ghost
 			ChargeBar.Create(this, chargeBar =>
 			{
 				_view.SetChargeBar(chargeBar);
+				_view.ChargeBar.SetVisible(false);
 				var barPosition = Utilities.GetScreenPosition(_view.ChargeBarPosition.position);
 				_view.ChargeBar.transform.localPosition = barPosition;
 			});

@@ -23,15 +23,9 @@ namespace Ghost
 		{
 			var pos = Vector2.zero;
 
-			var mainCanvasRect = UIManager.I.MainCanvas.rectTransform();
-			var mainCamera = UIManager.I.MainCamera;
-			var uiCamera = UIManager.I.UICamera;
-
-			var screenPos = RectTransformUtility.WorldToScreenPoint(mainCamera, worldPos);
+			var screenPos = RectTransformUtility.WorldToScreenPoint(UIManager.I.MainCamera, worldPos);
 			RectTransformUtility.ScreenPointToLocalPointInRectangle(
-				mainCanvasRect, screenPos, uiCamera, out pos);
-
-			Debug.Log($"{worldPos} -> {screenPos} -> {pos}");
+				UIManager.I.CanvasRect, screenPos, UIManager.I.UICamera, out pos);
 
 			return pos;
 		}

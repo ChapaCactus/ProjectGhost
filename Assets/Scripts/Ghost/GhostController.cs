@@ -9,6 +9,8 @@ namespace Ghost
 	[RequireComponent(typeof(GhostView))]
 	public class GhostController : MonoBehaviour
 	{
+		public float ChargePower => 50;
+
 		private GhostView _view { get; set; }
 		private GhostModel _model { get; set; }
 
