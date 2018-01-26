@@ -17,6 +17,7 @@ namespace Ghost
 		private Constants.PotType _potType;
 
 		public bool IsCharging => _chargingCoroutine != null;
+		public float ChargePower => _ghost.ChargePower;
 
 		private Coroutine _chargingCoroutine { get; set; } = null;
 
@@ -87,8 +88,9 @@ namespace Ghost
 
 			_view.ChargeBar.SetVisible(false);
 			_ghost = ghost;
+			_ghost.transform.localPosition += new Vector3(0, 50, 0);
 
-			SetChargeBarValue(_ghost.ChargePower);
+			SetChargeBarValue(ChargePower);
 		}
 
 		public void RemoveGhost()

@@ -28,8 +28,6 @@ namespace Ghost
 			RectTransformUtility.ScreenPointToLocalPointInRectangle(
 				UIManager.I.CanvasRect, screenPos, UIManager.I.UICamera, out pos);
 
-			Debug.Log($"worldPos: {worldPos}, screenPos: {screenPos}, pos: {pos}");
-
 			return pos;
 		}
 
