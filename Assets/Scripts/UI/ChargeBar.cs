@@ -38,6 +38,7 @@ namespace Ghost
 
 		public void SetVisible(bool visible)
 		{
+			if (!visible) return;
 			gameObject.SetActive(visible);
 		}
 

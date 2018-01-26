@@ -121,7 +121,7 @@ namespace Ghost
 				_view.SetChargeBar(chargeBar);
 				_view.ChargeBar.SetVisible(false);
 				var barPosition = Utilities.GetScreenPosition(_view.ChargeBarPosition.position);
-				_view.ChargeBar.transform.localPosition = barPosition;
+				_view.ChargeBar.GetComponent<RectTransform>().localPosition = barPosition;
 			});
 		}
 	}
