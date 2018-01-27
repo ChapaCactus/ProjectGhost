@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using DG.Tweening;
+
 namespace Ghost
 {
 	public class GhostView : MonoBehaviour
@@ -18,6 +20,11 @@ namespace Ghost
 		public void SetSprite(Sprite sprite)
 		{
 			_renderer.sprite = sprite;
+		}
+
+		public void SetColor(Color color, float duration)
+		{
+			_renderer.DOColor(color, duration);
 		}
 	}
 }

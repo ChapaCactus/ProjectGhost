@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 7
 --- !u!114 &73480077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 2
 --- !u!114 &345770789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 6
 --- !u!114 &495226984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 1
 --- !u!114 &720486303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 9
 --- !u!114 &908401527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 5
 --- !u!114 &966912543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1731,7 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 4
 --- !u!114 &1139962056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 3
 --- !u!114 &1292328286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412939cb613344604a2af95cd884b0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _potType: 0
+  _potNumber: 8
 --- !u!114 &2052272893
 MonoBehaviour:
   m_ObjectHideFlags: 0

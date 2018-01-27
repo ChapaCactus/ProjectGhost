@@ -15,7 +15,7 @@ namespace Ghost
 	public class PowerPotController : MonoBehaviour
 	{
 		[SerializeField]
-		private Constants.PotType _potType;
+		private int _potNumber;
 
 		public bool IsCharging => _chargingCoroutine != null;
 		public float ChargePower => _ghost.ChargePower;
@@ -31,6 +31,7 @@ namespace Ghost
 		private void Awake()
 		{
 			_view = GetComponent<PowerPotView>();
+			_linker = GetComponent<PowerPotLinker>();
 			_quickTap = GetComponent<QuickTap>();
 
 			PrepareChargeBar();
@@ -93,6 +94,8 @@ namespace Ghost
 			_ghost.transform.localPosition += new Vector3(0, 50, 0);
 
 			SetChargeBarValue(ChargePower);
+
+			SendLinkPower();
 		}
 
 		public void RemoveGhost()
@@ -101,6 +104,54 @@ namespace Ghost
 			_ghost = null;
 			_view.ChargeBar.SetVisible(false);
 			_view.ChargeBar.Reset();
+		}
+
+		public void SendLinkPower()
+		{
+			if (_ghost.IsLinkTo1)
+			{
+				_linker.EachDirectionPots[1]?.ReceiveLinkPower();
+			}
+
+			if (_ghost.IsLinkTo2)
+			{
+				_linker.EachDirectionPots[2]?.ReceiveLinkPower();
+			}
+
+			if (_ghost.IsLinkTo3)
+			{
+				_linker.EachDirectionPots[3]?.ReceiveLinkPower();
+			}
+
+			if (_ghost.IsLinkTo4)
+			{
+				_linker.EachDirectionPots[4]?.ReceiveLinkPower();
+			}
+
+			if (_ghost.IsLinkTo6)
+			{
+				_linker.EachDirectionPots[6]?.ReceiveLinkPower();
+			}
+
+			if (_ghost.IsLinkTo7)
+			{
+				_linker.EachDirectionPots[7]?.ReceiveLinkPower();
+			}
+
+			if (_ghost.IsLinkTo8)
+			{
+				_linker.EachDirectionPots[8]?.ReceiveLinkPower();
+			}
+
+			if (_ghost.IsLinkTo9)
+			{
+				_linker.EachDirectionPots[9]?.ReceiveLinkPower();
+			}
+		}
+
+		public void ReceiveLinkPower()
+		{
+			Debug.Log($"{_potNumber} is power received.");
 		}
 
 		private void SetChargeBarValue(float value)
