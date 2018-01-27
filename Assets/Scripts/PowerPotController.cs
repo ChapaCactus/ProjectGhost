@@ -11,6 +11,7 @@ namespace Ghost
 {
 	[RequireComponent(typeof(PowerPotView))]
 	[RequireComponent(typeof(QuickTap))]
+	[RequireComponent(typeof(PowerPotLinker))]
 	public class PowerPotController : MonoBehaviour
 	{
 		[SerializeField]
@@ -23,6 +24,7 @@ namespace Ghost
 
 		private PowerPotModel _model { get; set; }
 		private PowerPotView _view { get; set; }
+		private PowerPotLinker _linker { get; set; }
 		private GhostController _ghost { get; set; }
 		private QuickTap _quickTap { get; set; }
 
