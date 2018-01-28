@@ -20,11 +20,16 @@ namespace Ghost
 		[SerializeField]
 		private Transform _chargeBarParent;
 
+		[SerializeField]
+		private Transform _effectUIParent;
+
 		public Canvas Canvas => _canvas;
 		public RectTransform CanvasRect => Canvas.rectTransform();
 		public Camera MainCamera => _mainCamera;
 		public Camera UICamera => _uiCamera;
+
 		public Transform ChargeBarParent => _chargeBarParent;
+		public Transform EffectUIParent => _effectUIParent;
 
 		private void Awake()
 		{

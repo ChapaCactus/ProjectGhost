@@ -95,63 +95,119 @@ namespace Ghost
 
 			SetChargeBarValue(ChargePower);
 
-			SendLinkPower();
+			SendLinkPower(true);
 		}
 
 		public void RemoveGhost()
 		{
+			SendLinkPower(false);
+
 			Destroy(_ghost.gameObject);
 			_ghost = null;
 			_view.ChargeBar.SetVisible(false);
 			_view.ChargeBar.Reset();
 		}
 
-		public void SendLinkPower()
+		public void SendLinkPower(bool isUpLink)
 		{
 			if (_ghost.IsLinkTo1)
 			{
-				_linker.EachDirectionPots[1]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[1]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[1]?.OutLinkPower();
 			}
 
 			if (_ghost.IsLinkTo2)
 			{
-				_linker.EachDirectionPots[2]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[2]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[2]?.OutLinkPower();
 			}
 
 			if (_ghost.IsLinkTo3)
 			{
-				_linker.EachDirectionPots[3]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[3]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[3]?.OutLinkPower();
 			}
 
 			if (_ghost.IsLinkTo4)
 			{
-				_linker.EachDirectionPots[4]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[4]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[4]?.OutLinkPower();
 			}
 
 			if (_ghost.IsLinkTo6)
 			{
-				_linker.EachDirectionPots[6]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[6]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[6]?.OutLinkPower();
 			}
 
 			if (_ghost.IsLinkTo7)
 			{
-				_linker.EachDirectionPots[7]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[7]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[7]?.OutLinkPower();
 			}
 
 			if (_ghost.IsLinkTo8)
 			{
-				_linker.EachDirectionPots[8]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[8]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[8]?.OutLinkPower();
 			}
 
 			if (_ghost.IsLinkTo9)
 			{
-				_linker.EachDirectionPots[9]?.ReceiveLinkPower();
+				if (isUpLink)
+					_linker.EachDirectionPots[9]?.ReceiveLinkPower();
+				else
+					_linker.EachDirectionPots[9]?.OutLinkPower();
 			}
 		}
 
 		public void ReceiveLinkPower()
 		{
 			Debug.Log($"{_potNumber} is power received.");
+
+			PlayUpEffect();
+		}
+
+		public void OutLinkPower()
+		{
+			PlayDownEffect();
+		}
+
+		public void PlayUpEffect()
+		{
+			PlayEffect(Constants.EffectUIType.PowerUp, new Vector3(0, 30, 0));
+		}
+
+		public void PlayDownEffect()
+		{
+			PlayEffect(Constants.EffectUIType.PowerDown, new Vector3(0, -30, 0) );
+		}
+
+		private void PlayEffect(Constants.EffectUIType key, Vector3 move)
+		{
+			if (_ghost == null) return;
+
+			var parent = UIManager.I.EffectUIParent;
+			EffectUI.Create(key, parent, effect =>
+			{
+				var startPos = Utilities.GetScreenPosition(transform.position);
+				effect.SetLocalPosition(startPos);
+				effect.Play(move, isAutoDestroy:true);
+			});
 		}
 
 		private void SetChargeBarValue(float value)
