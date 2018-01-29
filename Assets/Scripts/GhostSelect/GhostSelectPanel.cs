@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace Ghost
 
 		public void Setup()
 		{
+			_selectList.Setup(OnSelect);
 		}
 
 		public void OnSelect(GhostModel model)
