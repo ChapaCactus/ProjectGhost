@@ -561,7 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9a2038707964d10a14720539f10527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ghostInfoPanel: {fileID: 2017915913}
+  _selectList: {fileID: 940584468}
+  _infoPanel: {fileID: 2017915913}
 --- !u!1 &125693004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,8 +1568,9 @@ GameObject:
   - component: {fileID: 940584465}
   - component: {fileID: 940584467}
   - component: {fileID: 940584466}
+  - component: {fileID: 940584468}
   m_Layer: 5
-  m_Name: Select
+  m_Name: GhostSelectList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,6 +1627,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940584464}
+--- !u!114 &940584468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940584464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69c8d07d235d45418a60e6339226dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966912540
 GameObject:
   m_ObjectHideFlags: 0

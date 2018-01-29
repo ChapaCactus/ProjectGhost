@@ -9,12 +9,12 @@ namespace Ghost
 	public class GhostSelectPanel : SingletonMonoBehaviour<GhostSelectPanel>
 	{
 		[SerializeField]
-		private GhostSelectList _ghostSelectList;
+		private GhostSelectList _selectList;
 
 		[SerializeField]
-		private GhostInfoPanel _ghostInfoPanel;
+		private GhostInfoPanel _infoPanel;
 
-		private GhostModel _currentSelectGhost { get; set; } = null;
+		private GhostModel _currentSelectGhost { get; set; }
 
 		private void Awake()
 		{
@@ -27,13 +27,13 @@ namespace Ghost
 
 		public void OnSelect(GhostModel model)
 		{
-			_ghostInfoPanel.Setup(model);
+			_infoPanel.Setup(model);
 		}
 
 		private void CheckComponents()
 		{
-			Assert.IsNotNull(_ghostSelectList);
-			Assert.IsNotNull(_ghostInfoPanel);
+			Assert.IsNotNull(_selectList);
+			Assert.IsNotNull(_infoPanel);
 		}
 	}
 }
