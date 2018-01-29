@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Assertions;
 
 using HedgehogTeam.EasyTouch;
 using DG.Tweening;
@@ -17,8 +18,13 @@ namespace Ghost
 		[SerializeField]
 		private int _potNumber;
 
+		[SerializeField]
+		private ParticleSystem _sparkParticlePrefab;
+
 		public bool IsCharging => _chargingCoroutine != null;
 		public float ChargePower => _ghost.ChargePower;
+
+		public bool IsEnablePot => gameObject.activeSelf;
 
 		private Coroutine _chargingCoroutine { get; set; } = null;
 
@@ -37,6 +43,8 @@ namespace Ghost
 			PrepareChargeBar();
 
 			_quickTap.onTap.AddListener(OnTouch);
+
+			CheckComponents();
 		}
 
 		private void Update()
@@ -95,6 +103,7 @@ namespace Ghost
 
 			SetChargeBarValue(ChargePower);
 
+			PlaySparkParticle();
 			SendLinkPower(true);
 		}
 
@@ -234,6 +243,18 @@ namespace Ghost
 				var barPosition = Utilities.GetScreenPosition(_view.ChargeBarPosition.position);
 				_view.ChargeBar.GetComponent<RectTransform>().localPosition = barPosition;
 			});
+		}
+
+		private void PlaySparkParticle()
+		{
+			var particle = Instantiate<ParticleSystem>(_sparkParticlePrefab, transform);
+			particle.Emit(20);
+			Destroy(particle.gameObject, 2);
+		}
+
+		private void CheckComponents()
+		{
+			Assert.IsNotNull(_sparkParticlePrefab);
 		}
 	}
 }

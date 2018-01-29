@@ -389,6 +389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 7
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &73480077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,7 +431,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -440,7 +442,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &73480079
 MonoBehaviour:
@@ -563,6 +565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 2
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &345770789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +619,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -626,7 +630,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &345770792
 SpriteRenderer:
@@ -741,6 +745,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 6
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &495226984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +799,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -804,7 +810,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &495226987
 SpriteRenderer:
@@ -947,6 +953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 1
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &720486303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,7 +1007,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1010,7 +1018,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &720486306
 SpriteRenderer:
@@ -1189,6 +1197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 9
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &908401527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,7 +1251,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1252,7 +1262,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &908401530
 SpriteRenderer:
@@ -1367,6 +1377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 5
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &966912543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1419,7 +1431,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1430,7 +1442,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &966912546
 SpriteRenderer:
@@ -1734,6 +1746,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 4
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &1139962056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,7 +1800,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1797,7 +1811,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &1139962059
 SpriteRenderer:
@@ -1986,6 +2000,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 3
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &1292328286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2038,7 +2054,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2049,7 +2065,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &1292328289
 SpriteRenderer:
@@ -2550,6 +2566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _potNumber: 8
+  _sparkParticlePrefab: {fileID: 198826302959230902, guid: ee6ed01e49b5248ffb8a2ec6492b273f,
+    type: 2}
 --- !u!114 &2052272893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,7 +2620,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: 10}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2613,7 +2631,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 100}
+  m_Size: {x: 128, y: 150}
   m_EdgeRadius: 0
 --- !u!212 &2052272896
 SpriteRenderer:
