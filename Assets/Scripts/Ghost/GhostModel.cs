@@ -6,6 +6,8 @@ namespace Ghost
 {
 	public class GhostModel
 	{
+		public string Name { get; private set; }
+
 		public int BasePower { get; private set; }
 
 		public bool IsLinkTo1 { get; private set; } = false;
